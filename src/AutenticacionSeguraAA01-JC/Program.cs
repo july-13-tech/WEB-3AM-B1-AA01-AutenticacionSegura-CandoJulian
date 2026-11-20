@@ -1,5 +1,9 @@
-var builder = WebApplication.CreateBuilder(args);
+using AutenticacionSeguraAA01_JC.Datos;
+using Microsoft.EntityFrameworkCore;
 
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ContextoAplicacion>(opciones =>
+    opciones.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
