@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MailKit" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="11.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="11.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,7 +24,6 @@
 
   <ItemGroup>
     <Folder Include="Datos\Migrations\" />
-    <Folder Include="Infraestructura\Correo\" />
     <Folder Include="Negocio\Modelos\" />
   </ItemGroup>
 

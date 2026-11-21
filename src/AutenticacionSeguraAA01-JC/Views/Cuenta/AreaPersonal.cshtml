@@ -14,8 +14,7 @@
                 <div class="d-flex align-items-center mb-4">
                     <i class="bi bi-person-circle icono-acento me-3"></i>
                     <div>
-                        <h2 class="h5 mb-1">Bienvenido</h2>
-                        <span class="text-muted">@User.Identity?.Name</span>
+                        <h2 class="h5 mb-1">Bienvenido/a Nuevamente</h2>
                     </div>
                 </div>
 
@@ -38,6 +37,9 @@
                     <dt class="col-sm-4">Estado de la sesión</dt>
                     <dd class="col-sm-8"><span class="badge text-bg-success">Activa</span></dd>
                 </dl>
+                <a asp-controller="Perfil" asp-action="Index" class="btn btn-outline-accent mt-4">
+                    <i class="bi bi-person-gear"></i> Ver mi perfil
+                </a>
             </div>
         </div>
     </div>

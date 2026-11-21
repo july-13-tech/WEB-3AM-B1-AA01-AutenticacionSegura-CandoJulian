@@ -1,0 +1,52 @@
+﻿@model AutenticacionSeguraAA01_JC.ViewModels.RestablecerContrasenaViewModel
+
+@{
+    Layout = "_LayoutCuenta";
+    ViewData["Title"] = "Nueva contraseña";
+}
+
+<section id="restablecer" class="login-page py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-5">
+                <div class="login-panel">
+                    <h1 class="section-title text-center mb-4">Nueva contraseña</h1>
+
+                    <form asp-action="RestablecerContrasena" method="post" class="login-form card shadow-sm p-4" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                        <input asp-for="IdUsuario" type="hidden" />
+                        <input asp-for="Token" type="hidden" />
+
+                        <div class="mb-3">
+                            <label asp-for="NuevaContrasena" class="form-label">Nueva contraseña</label>
+                            <div class="input-group">
+                                <input asp-for="NuevaContrasena" class="form-control" autocomplete="new-password" />
+                                <button type="button" class="btn btn-outline-secondary" data-alternar-contrasena="NuevaContrasena" aria-label="Mostrar u ocultar contraseña">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+                            <span asp-validation-for="NuevaContrasena" class="text-danger small"></span>
+                            <div class="form-text">Mínimo 8 caracteres, con mayúscula, minúscula, número y símbolo.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ConfirmarContrasena" class="form-label">Confirmar contraseña</label>
+                            <div class="input-group">
+                                <input asp-for="ConfirmarContrasena" class="form-control" autocomplete="new-password" />
+                                <button type="button" class="btn btn-outline-secondary" data-alternar-contrasena="ConfirmarContrasena" aria-label="Mostrar u ocultar contraseña">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+                            <span asp-validation-for="ConfirmarContrasena" class="text-danger small"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-accent w-100">
+                            <i class="bi bi-key"></i> Guardar contraseña
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
