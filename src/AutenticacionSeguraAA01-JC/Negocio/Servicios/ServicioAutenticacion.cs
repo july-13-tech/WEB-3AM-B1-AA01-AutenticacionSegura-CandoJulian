@@ -61,9 +61,12 @@ public class ServicioAutenticacion : IServicioAutenticacion
     {
         var usuarioAplicacion = await gestorUsuarios.FindByEmailAsync(dtoIngreso.Correo.Trim());
 
-        if (usuarioAplicacion is null || !usuarioAplicacion.Habilitado)
+        if (usuarioAplicacion is null)
         {
             return DtoResultadoIngreso.Fallido(ConstantesMensajes.MENSAJE_CREDENCIALES_INVALIDAS);
+        }else if (!usuarioAplicacion.Habilitado)
+        {
+            return DtoResultadoIngreso.Fallido(ConstantesMensajes.MENSAJE_CUENTA_DESHABILITADA);
         }
 
         var signInResult = await gestorInicioSesion.PasswordSignInAsync(

@@ -17,14 +17,17 @@ public class ServicioRecuperacionCuenta : IServicioRecuperacionCuenta
     private readonly IEmailService emailService;
     private readonly DataProtectionTokenProviderOptions opcionesToken;
     private readonly ILogger<ServicioRecuperacionCuenta> registrador;
+    private readonly SignInManager<UsuarioAplicacion> gestorInicioSesion;
 
     public ServicioRecuperacionCuenta(
         UserManager<UsuarioAplicacion> gestorUsuarios,
+        SignInManager<UsuarioAplicacion> gestorInicioSesion,
         IEmailService emailService,
         IOptions<DataProtectionTokenProviderOptions> opcionesToken,
         ILogger<ServicioRecuperacionCuenta> registrador)
     {
         this.gestorUsuarios = gestorUsuarios;
+        this.gestorInicioSesion = gestorInicioSesion;
         this.emailService = emailService;
         this.opcionesToken = opcionesToken.Value;
         this.registrador = registrador;
@@ -121,7 +124,7 @@ public class ServicioRecuperacionCuenta : IServicioRecuperacionCuenta
 
         await gestorUsuarios.ResetAccessFailedCountAsync(usuarioAplicacion);
         await gestorUsuarios.SetLockoutEndDateAsync(usuarioAplicacion, null);
-
+        await gestorInicioSesion.SignOutAsync();
         return DtoResultadoOperacion.Correcto();
     }
 

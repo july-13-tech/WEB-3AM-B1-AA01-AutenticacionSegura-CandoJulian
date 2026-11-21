@@ -66,7 +66,7 @@ public class ServicioPerfil : IServicioPerfil
             return DtoResultadoOperacion.Fallido(identityResult.Errors.Select(identityError => identityError.Description));
         }
 
-        await gestorInicioSesion.RefreshSignInAsync(usuarioAplicacion);
+        await gestorInicioSesion.SignOutAsync();
 
         return DtoResultadoOperacion.Correcto();
     }

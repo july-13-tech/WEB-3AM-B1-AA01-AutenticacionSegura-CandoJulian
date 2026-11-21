@@ -90,7 +90,7 @@ public class PerfilController : Controller
             return View(cambiarContrasenaViewModel);
         }
 
-        TempData["Mensaje"] = "Tu contraseña fue actualizada correctamente.";
-        return RedirectToAction(nameof(Index));
+        TempData["Mensaje"] = "Tu contraseña fue actualizada. Inicia sesión con la nueva contraseña.";
+        return RedirectToAction("IniciarSesion", "Cuenta");
     }
 }

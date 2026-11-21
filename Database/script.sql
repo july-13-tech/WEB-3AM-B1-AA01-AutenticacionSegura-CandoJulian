@@ -1,4 +1,13 @@
-﻿IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+﻿IF DB_ID(N'MundoMotrizJC') IS NULL
+BEGIN
+    CREATE DATABASE MundoMotrizJC;
+END;
+GO
+
+USE MundoMotrizJC;
+GO
+
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
 BEGIN
     CREATE TABLE [__EFMigrationsHistory] (
         [MigrationId] nvarchar(150) NOT NULL,
@@ -192,4 +201,3 @@ END;
 
 COMMIT;
 GO
-

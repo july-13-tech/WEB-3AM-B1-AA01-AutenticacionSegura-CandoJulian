@@ -26,8 +26,8 @@ builder.Services
         opcionesIdentidad.User.RequireUniqueEmail = true;
 
         opcionesIdentidad.Lockout.AllowedForNewUsers = true;
-        opcionesIdentidad.Lockout.MaxFailedAccessAttempts = 5;
-        opcionesIdentidad.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+        opcionesIdentidad.Lockout.MaxFailedAccessAttempts = 3;
+        opcionesIdentidad.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(2);
     })
     .AddErrorDescriber<DescriptorErroresIdentidad>()
     .AddEntityFrameworkStores<ContextoAplicacion>()
@@ -40,7 +40,7 @@ builder.Services.Configure<SecurityStampValidatorOptions>(opcionesValidador =>
 
 builder.Services.Configure<DataProtectionTokenProviderOptions>(opcionesToken =>
 {
-    opcionesToken.TokenLifespan = TimeSpan.FromMinutes(15);
+    opcionesToken.TokenLifespan = TimeSpan.FromMinutes(2);
 });
 
 builder.Services.ConfigureApplicationCookie(opcionesCookie =>
@@ -54,7 +54,7 @@ builder.Services.ConfigureApplicationCookie(opcionesCookie =>
     opcionesCookie.LogoutPath = "/Cuenta/CerrarSesion";
     opcionesCookie.AccessDeniedPath = "/Cuenta/AccesoDenegado";
 
-    opcionesCookie.ExpireTimeSpan = TimeSpan.FromDays(7);
+    opcionesCookie.ExpireTimeSpan = TimeSpan.FromDays(1);
     opcionesCookie.SlidingExpiration = true;
 });
 
