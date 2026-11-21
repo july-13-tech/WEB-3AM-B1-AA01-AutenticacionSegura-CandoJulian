@@ -7,28 +7,28 @@ namespace AutenticacionSeguraAA01_JC.Datos
 {
     public class ContextoAplicacion : IdentityDbContext<UsuarioAplicacion>
     {
-        public ContextoAplicacion(DbContextOptions<ContextoAplicacion> opciones)
-            : base(opciones)
+        public ContextoAplicacion(DbContextOptions<ContextoAplicacion> opcionesContexto)
+            : base(opcionesContexto)
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder constructor)
+        protected override void OnModelCreating(ModelBuilder constructorModelo)
         {
-            base.OnModelCreating(constructor);
+            base.OnModelCreating(constructorModelo);
 
-            constructor.Entity<UsuarioAplicacion>(entidad =>
+            constructorModelo.Entity<UsuarioAplicacion>(constructorEntidad =>
             {
-                entidad.Property(u => u.NombreCompleto)
-                       .IsRequired()
-                       .HasMaxLength(100);
+                constructorEntidad.Property(usuarioAplicacion => usuarioAplicacion.NombreCompleto)
+                    .IsRequired()
+                    .HasMaxLength(100);
             });
-            constructor.Entity<UsuarioAplicacion>().ToTable("Usuarios");
-            constructor.Entity<IdentityRole>().ToTable("Roles");
-            constructor.Entity<IdentityUserRole<string>>().ToTable("UsuariosRoles");
-            constructor.Entity<IdentityUserClaim<string>>().ToTable("UsuariosReclamos");
-            constructor.Entity<IdentityUserLogin<string>>().ToTable("UsuariosLogins");
-            constructor.Entity<IdentityRoleClaim<string>>().ToTable("RolesReclamos");
-            constructor.Entity<IdentityUserToken<string>>().ToTable("UsuariosTokens");
+            constructorModelo.Entity<UsuarioAplicacion>().ToTable("Usuarios");
+            constructorModelo.Entity<IdentityRole>().ToTable("Roles");
+            constructorModelo.Entity<IdentityUserRole<string>>().ToTable("UsuariosRoles");
+            constructorModelo.Entity<IdentityUserClaim<string>>().ToTable("UsuariosReclamos");
+            constructorModelo.Entity<IdentityUserLogin<string>>().ToTable("UsuariosLogins");
+            constructorModelo.Entity<IdentityRoleClaim<string>>().ToTable("RolesReclamos");
+            constructorModelo.Entity<IdentityUserToken<string>>().ToTable("UsuariosTokens");
         }
     }
 }

@@ -1,0 +1,169 @@
+﻿:root {
+    --color-acento: #ff6b1a;
+    --color-acento-oscuro: #e0560a;
+    --color-oscuro: #212529;
+    --bs-link-color: #e0560a;
+    --bs-link-color-rgb: 224, 86, 10;
+    --bs-link-hover-color: #b84508;
+    --bs-link-hover-color-rgb: 184, 69, 8;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.text-accent {
+    color: var(--color-acento);
+}
+
+.btn-accent,
+.btn-primary {
+    --bs-btn-bg: var(--color-acento);
+    --bs-btn-border-color: var(--color-acento);
+    --bs-btn-color: #fff;
+    --bs-btn-hover-bg: var(--color-acento-oscuro);
+    --bs-btn-hover-border-color: var(--color-acento-oscuro);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-bg: var(--color-acento-oscuro);
+    --bs-btn-active-border-color: var(--color-acento-oscuro);
+    --bs-btn-active-color: #fff;
+    --bs-btn-disabled-bg: var(--color-acento);
+    --bs-btn-disabled-border-color: var(--color-acento);
+}
+
+.btn-outline-accent {
+    --bs-btn-color: var(--color-acento-oscuro);
+    --bs-btn-border-color: var(--color-acento);
+    --bs-btn-hover-bg: var(--color-acento);
+    --bs-btn-hover-border-color: var(--color-acento);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-bg: var(--color-acento-oscuro);
+    --bs-btn-active-border-color: var(--color-acento-oscuro);
+    --bs-btn-active-color: #fff;
+}
+
+.badge-accent {
+    background-color: var(--color-acento);
+    color: #fff;
+}
+
+.badge-oscuro {
+    background-color: var(--color-oscuro);
+    color: #fff;
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: .75rem;
+}
+
+    .section-title::after {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 4px;
+        margin: .5rem auto 0;
+        background: var(--color-acento);
+        border-radius: 2px;
+    }
+
+    .section-title.text-start::after {
+        margin-left: 0;
+    }
+
+.navbar-mundo {
+    background-color: var(--color-oscuro);
+    border-bottom: 3px solid var(--color-acento);
+}
+
+    .navbar-mundo .navbar-brand {
+        font-weight: 700;
+        letter-spacing: .02em;
+    }
+
+        .navbar-mundo .navbar-brand .bi {
+            color: var(--color-acento);
+        }
+
+    .navbar-mundo .nav-link {
+        color: rgba(255, 255, 255, .82);
+    }
+
+        .navbar-mundo .nav-link:hover,
+        .navbar-mundo .nav-link:focus,
+        .navbar-mundo .nav-link.active {
+            color: var(--color-acento);
+        }
+
+.footer-mundo {
+    background-color: var(--color-oscuro);
+    color: rgba(255, 255, 255, .7);
+    border-top: 3px solid var(--color-acento);
+}
+
+.card-mundo {
+    border: 0;
+    border-top: 4px solid var(--color-acento);
+    border-radius: .75rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+.icono-acento {
+    font-size: 3rem;
+    color: var(--color-acento);
+}
+
+.table-mundo thead th {
+    background-color: var(--color-oscuro);
+    color: #fff;
+    border-color: var(--color-oscuro);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--color-acento);
+    box-shadow: 0 0 0 .25rem rgba(255, 107, 26, .25);
+}
+
+.form-check-input:checked {
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+}
+
+.form-check-input:focus {
+    border-color: var(--color-acento);
+    box-shadow: 0 0 0 .25rem rgba(255, 107, 26, .25);
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border-color: #dc3545;
+}
+
+.hero-inicio {
+    display: flex;
+    min-height: 60vh;
+    align-items: center;
+    color: #fff;
+    background-image: linear-gradient(90deg, rgba(13, 23, 28, .9), rgba(13, 23, 28, .56) 55%, rgba(13, 23, 28, .15)), url("../img/banner-taller.png");
+    background-position: center;
+    background-size: cover;
+}
+
+    .hero-inicio h1 {
+        max-width: 720px;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 750;
+        line-height: 1.1;
+    }
+
+.hero-eyebrow {
+    color: #ffc18f;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}

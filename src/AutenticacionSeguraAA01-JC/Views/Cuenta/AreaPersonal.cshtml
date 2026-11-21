@@ -1,0 +1,44 @@
+﻿@using AutenticacionSeguraAA01_JC.Comunes.Constantes
+
+@{
+    ViewData["Title"] = "Área personal";
+    var esAdministrador = User.IsInRole(ConstantesNombresRoles.ADMINISTRADOR);
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <h1 class="section-title text-center h3 mb-4">Área personal</h1>
+
+        <div class="card card-mundo">
+            <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="bi bi-person-circle icono-acento me-3"></i>
+                    <div>
+                        <h2 class="h5 mb-1">Bienvenido</h2>
+                        <span class="text-muted">@User.Identity?.Name</span>
+                    </div>
+                </div>
+
+                <dl class="row mb-0">
+                    <dt class="col-sm-4">Correo</dt>
+                    <dd class="col-sm-8">@User.Identity?.Name</dd>
+
+                    <dt class="col-sm-4">Rol</dt>
+                    <dd class="col-sm-8">
+                        @if (esAdministrador)
+                        {
+                            <span class="badge badge-oscuro">Administrador</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-accent">Cliente</span>
+                        }
+                    </dd>
+
+                    <dt class="col-sm-4">Estado de la sesión</dt>
+                    <dd class="col-sm-8"><span class="badge text-bg-success">Activa</span></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutenticacionSeguraAA01_JC.Datos.Migrations;
 
 [DbContext(typeof(ContextoAplicacion))]
-[Migration("20261120055640_Inicial")]
-partial class _20261120055640_Inicial
+[Migration("20261120225922_Inicial")]
+partial class _20261120225922_Inicial
 {
     /// <inheritdoc />
     protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AutenticacionSeguraAA01_JC.Datos.Migrations;
 
 /// <inheritdoc />
-public partial class _20261120055640_Inicial : Migration
+public partial class _20261120225922_Inicial : Migration
 {
     /// <inheritdoc />
     protected override void Up(MigrationBuilder migrationBuilder)

@@ -1,8 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="hero-inicio rounded-3 overflow-hidden mb-4">
+    <div class="container py-5">
+        <p class="hero-eyebrow mb-2">Mantenimiento automotriz</p>
+        <h1 class="mb-3">Mundo Motriz JC</h1>
+        <p class="lead mb-4">Accede a tu cuenta para gestionar tus datos de forma segura.</p>
+        @if (User.Identity?.IsAuthenticated == true)
+        {
+            <a class="btn btn-accent btn-lg" asp-controller="Cuenta" asp-action="AreaPersonal">
+                <i class="bi bi-person-circle"></i> Ir a mi área personal
+            </a>
+        }
+        else
+        {
+            <a class="btn btn-accent btn-lg me-2" asp-controller="Cuenta" asp-action="IniciarSesion">
+                <i class="bi bi-box-arrow-in-right"></i> Iniciar sesión
+            </a>
+            <a class="btn btn-outline-light btn-lg" asp-controller="Cuenta" asp-action="Registrar">Crear cuenta</a>
+        }
+    </div>
+</section>
