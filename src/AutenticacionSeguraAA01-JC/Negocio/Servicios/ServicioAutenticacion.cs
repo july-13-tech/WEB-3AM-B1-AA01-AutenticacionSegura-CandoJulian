@@ -36,6 +36,7 @@ public class ServicioAutenticacion : IServicioAutenticacion
             UserName = correoNormalizado,
             Email = correoNormalizado,
             NombreCompleto = dtoRegistro.NombreCompleto.Trim(),
+            FechaRegistro = DateTime.Now,
             Habilitado = true
         };
 
