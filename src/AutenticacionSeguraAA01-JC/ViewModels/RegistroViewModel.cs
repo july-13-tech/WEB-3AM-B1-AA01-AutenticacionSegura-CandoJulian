@@ -7,6 +7,8 @@ public class RegistroViewModel
     [Required(ErrorMessage = "El nombre es obligatorio.")]
     [StringLength(100, ErrorMessage = "El nombre no puede superar los 100 caracteres.")]
     [Display(Name = "Nombre completo")]
+    [RegularExpression(@"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$",
+        ErrorMessage = "El nombre solo puede contener letras y espacios")]
     public string NombreCompleto { get; set; } = string.Empty;
 
     [Required(ErrorMessage = "El correo es obligatorio.")]
